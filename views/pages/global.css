@@ -3,23 +3,33 @@
     padding: 0;
 }
 .global{
-    max-width: 50%;
-    
-    margin: auto;
+    max-width: 60%;
+    margin: 20px auto auto auto;
 }
 table{
+    width: 100%;
     margin: auto;
+    background: rgb(184, 248, 171);
+    border: 5px solid;
+    border-color: rgb(184, 248, 171);
+    border-radius: 5px;
 }
 input[type=button]{
     width: 100%;
     padding: 15px;
-    margin: 3px;
+    margin: auto;
     font-size: 16px;
+    background: #ffffff;
+    border-color: rgb(140, 197, 129);
+    border-radius: 5px;
+}
+input[type=button]:hover{
+    background: #f8f8f8;
 }
 input[type=text]{
     width: 100%;
     padding: 10px;
-    margin: 3px;
+    margin: auto;
     font-size: 20px;
     text-align: right;
     -webkit-box-sizing: border-box;
