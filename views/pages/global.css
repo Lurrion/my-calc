@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.global{
+    max-width: 50%;
+    
+    margin: auto;
+}
+table{
+    margin: auto;
+}
+input[type=button]{
+    width: 100%;
+    padding: 15px;
+    margin: 3px;
+    font-size: 16px;
+}
+input[type=text]{
+    width: 100%;
+    padding: 10px;
+    margin: 3px;
+    font-size: 20px;
+    text-align: right;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+

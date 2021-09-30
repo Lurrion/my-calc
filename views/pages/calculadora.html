@@ -3,8 +3,12 @@
   <head>
     <title>Calculadora</title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="global.css">
   </head>
   <body onkeypress="manipularTeclado()">
+    <div class="global">
+
+    
       <table>
           <tr>
               <td colspan="6"><input type="text" id="display" value="0" disabled></td>
@@ -34,6 +38,7 @@
             <td><input type="button" value="/" onclick="atualizarOperacao(this)" /></td>
         </tr>
       </table>
+    </div>
       <script>
         function atualizarDisplay(btn){
             const display = document.getElementById('display');
