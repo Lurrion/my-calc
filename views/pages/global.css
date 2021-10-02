@@ -11,7 +11,7 @@ table{
     margin: auto;
     background: rgb(255, 255, 255);
     border: 5px solid;
-    border-color: rgb(51, 51, 51);
+    border-color: rgb(55, 55, 55);
     border-radius: 5px;
 }
 input[type=button]{
@@ -20,7 +20,7 @@ input[type=button]{
     margin: auto;
     font-size: 16px;
     background: #ffffff;
-    border-color: rgb(51, 51, 51);
+    border-color: rgb(55, 55, 55);
     border-radius: 5px;
 }
 input[type=button]:hover{
