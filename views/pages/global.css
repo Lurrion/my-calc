@@ -9,9 +9,9 @@
 table{
     width: 100%;
     margin: auto;
-    background: rgb(184, 248, 171);
+    background: rgb(255, 255, 255);
     border: 5px solid;
-    border-color: rgb(184, 248, 171);
+    border-color: rgb(51, 51, 51);
     border-radius: 5px;
 }
 input[type=button]{
@@ -20,7 +20,7 @@ input[type=button]{
     margin: auto;
     font-size: 16px;
     background: #ffffff;
-    border-color: rgb(140, 197, 129);
+    border-color: rgb(51, 51, 51);
     border-radius: 5px;
 }
 input[type=button]:hover{
