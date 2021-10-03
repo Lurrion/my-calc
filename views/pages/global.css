@@ -3,35 +3,96 @@
     padding: 0;
 }
 .global{
-    max-width: 60%;
+    max-width: 50%;
     margin: 20px auto auto auto;
 }
 table{
     width: 100%;
     margin: auto;
-    background: rgb(255, 255, 255);
-    border: 5px solid;
-    border-color: rgb(55, 55, 55);
+    padding: 20px 30px;
+    background: #475059;
+    border: none;
     border-radius: 5px;
 }
-input[type=button]{
-    width: 100%;
-    padding: 15px;
-    margin: auto;
-    font-size: 16px;
+.botao{
+    width: 95%;
+    padding: 10px;
+    margin: 3px;
+    /* mudar a cor dos botoes*/
     background: #ffffff;
-    border-color: rgb(55, 55, 55);
+    border: none;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    border-color: #ffffff;
     border-radius: 5px;
+    font-size: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #475059;
 }
-input[type=button]:hover{
+.botao_nan{
+    width: 95%;
+    padding: 10px;
+    margin: 3px;
+    /* mudar a cor dos botoes de operacoes*/
+    background: #e2e2e2;
+    border: none;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    border-color: #e2e2e2;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #475059;
+}
+.botao_ig{
+    width: 95%;
+    padding: 10px;
+    margin: 3px;
+    /* mudar a cor do botao de igualdade */
+    background: #fe9554;
+    border: none;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    border-color: #fe9554;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            color: #475059;
+}
+.botao:hover{
+    border: 1.5px solid;
+    border-color: #475059;
+    /* mudar a cor dos botoes ao passar o mouse por cima*/
     background: #f8f8f8;
 }
-input[type=text]{
+.botao_nan:hover{
+    border: 1.5px solid;
+    border-color: #475059;
+    /* mudar a cor dos botoes de operacoes ao passar o mouse por cima*/
+    background: #c0c0c0;
+}
+.botao_ig:hover{
+    border: 1.5px solid;
+    border-color: #475059;
+    /* mudar a cor do botao de igualdade ao passar o mouse por cima*/
+    background: #ffa250;
+}
+.in_text{
+    background: #afead8;
+    border: none;
+    border-radius: 5px;
     width: 100%;
     padding: 10px;
     margin: auto;
+    margin-bottom: 5px;
     font-size: 20px;
     text-align: right;
+    color: #000;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
