@@ -32,7 +32,7 @@
             <td><input type="button" class="botao_nan" value="+" onclick="atualizarOperacao(this)" /></td>
         </tr>
         <tr>
-            <td><input type="button" class="botao_nan" value="%" onclick=atualizarOperacao(this)" /></td>
+            <td><input type="button" class="botao_nan" value="%" onclick="atualizarOperacao(this)" /></td>
             <td><input type="button" class="botao" value="0" onclick="atualizarDisplay(this)" /></td>
             <td><input type="button" class="botao_nan" value="C" onclick="limparDisplay(this)" /></td>
             <td><input type="button" class="botao_nan" value="÷" onclick="atualizarOperacao(this)" /></td>
@@ -45,6 +45,7 @@
             const display = document.getElementById('display');
             if(display.value.length === 9) return;
             if(display.value === '0') display.value = btn.value;
+            else if(display.value === operador) display.value = btn.value;
             else display.value += btn.value;
         }
 
@@ -58,10 +59,16 @@
             const display = document.getElementById('display');
             operador = btn.value;
             valor1 = parseInt(display.value);
-            display.value = '0';
+            display.value = operador;
         }
 
         function calcularOperacao(){
+          if(operador == "×"){
+          operador = "*";
+          }
+          if(operador == "÷"){
+          operador = "/";
+          }
             const display = document.getElementById('display');
             const valor2 = parseInt(display.value);
             valor1 = eval(valor1+operador+valor2);
