@@ -6,39 +6,41 @@
     <link rel="stylesheet" href="global.css">
   </head>
   <body onkeypress="manipularTeclado()">
+        <aside>
+          <h3>Historico:</h3>
+          <p id="outHistorico"></p>
+        </aside>
     <div class="global">
-
-    
-      <table>
-          <tr>
-              <td colspan="6"><input class="in_text" type="text" id="display" value="0" disabled></td>
+        <table>
+            <tr>
+                <td colspan="6"><input class="in_text" type="text" id="display" value="0" disabled></td>
+            </tr>
+            <tr>
+              <td><input type="button" class="botao" value="7" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao" value="8" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao" value="9" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao_nan" value="×" onclick="atualizarOperacao(this)" /></td>
           </tr>
           <tr>
-            <td><input type="button" class="botao" value="7" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao" value="8" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao" value="9" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao_nan" value="×" onclick="atualizarOperacao(this)" /></td>
-        </tr>
-        <tr>
-            <td><input type="button" class="botao" value="4" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao" value="5" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao" value="6" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao_nan" value="-" onclick="atualizarOperacao(this)" /></td>
-        </tr>
-        <tr>
-            <td><input type="button" class="botao" value="1" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao" value="2" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao" value="3" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao_nan" value="+" onclick="atualizarOperacao(this)" /></td>
-        </tr>
-        <tr>
-            <td><input type="button" class="botao_nan" value="%" onclick="atualizarOperacao(this)" /></td>
-            <td><input type="button" class="botao" value="0" onclick="atualizarDisplay(this)" /></td>
-            <td><input type="button" class="botao_nan" value="C" onclick="limparDisplay(this)" /></td>
-            <td><input type="button" class="botao_nan" value="÷" onclick="atualizarOperacao(this)" /></td>
-            <td><input type="button" class="botao_ig" value="=" onclick="calcularOperacao(this)" /></td>
-        </tr>
-      </table>
+              <td><input type="button" class="botao" value="4" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao" value="5" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao" value="6" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao_nan" value="-" onclick="atualizarOperacao(this)" /></td>
+          </tr>
+          <tr>
+              <td><input type="button" class="botao" value="1" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao" value="2" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao" value="3" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao_nan" value="+" onclick="atualizarOperacao(this)" /></td>
+          </tr>
+          <tr>
+              <td><input type="button" class="botao_nan" value="%" onclick="atualizarOperacao(this)" /></td>
+              <td><input type="button" class="botao" value="0" onclick="atualizarDisplay(this)" /></td>
+              <td><input type="button" class="botao_nan" value="C" onclick="limparDisplay(this)" /></td>
+              <td><input type="button" class="botao_nan" value="÷" onclick="atualizarOperacao(this)" /></td>
+              <td><input type="button" class="botao_ig" value="=" onclick="calcularOperacao(this)" /></td>
+          </tr>
+        </table>
     </div>
       <script>
         function atualizarDisplay(btn){
@@ -61,7 +63,8 @@
             valor1 = parseInt(display.value);
             display.value = operador;
         }
-
+        var historico = "";
+        var outHistorico = document.getElementById("outHistorico");
         function calcularOperacao(){
           if(operador == "×"){
           operador = "*";
@@ -71,8 +74,11 @@
           }
             const display = document.getElementById('display');
             const valor2 = parseInt(display.value);
+            historico += "\n" + valor1+operador+valor2;
             valor1 = eval(valor1+operador+valor2);
+            historico += "=" + valor1 + "\n"
             display.value = valor1;
+            outHistorico.textContent = historico;
             operador = '';
         }       
 
