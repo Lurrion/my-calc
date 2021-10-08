@@ -102,7 +102,7 @@
         margin-bottom: 5px;
         font-size: 20px;
         text-align: right;
-        color: #000;
+        color: rgb(0, 0, 0);
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
     }
@@ -113,19 +113,19 @@
         width: 14%;
         margin: auto 0px auto 5px;
         float: left;
-        background: #e2e2e2;
+        background: #ffffff;
         border-radius: 5px;
         -webkit-box-sizing: border-box;
-                box-sizing: border-box;
+                box-sizing: border-box;  
     }
     </style>
     <!-- <link rel="stylesheet" type="text/css" href="global.css"/> -->
   </head>
   <body onkeypress="manipularTeclado()">
-        <aside>
+       <!--<aside>
           <h3>Historico:</h3>
           <p id="outHistorico"></p>
-        </aside>
+        </aside>-->
     <div class="global">
         <table>
             <tr>
@@ -135,6 +135,7 @@
                 <td><input type="button" class="botao_nan" value="C" onclick="limparDisplay()" /></td>
                 <td><input type="button" class="botao_nan" value="(" onclick="atualizarDisplay('(')" /></td>
                 <td><input type="button" class="botao_nan" value=")" onclick="atualizarDisplay(')')" /></td>
+                <td><input type="button" class="botao_nan" value="x²" onclick="atualizarDisplay('**2')" /></td>
                 <td><input type="button" class="botao_nan" value="÷" onclick="atualizarDisplay('/')" /></td>
             </tr>
             <tr>
@@ -168,7 +169,7 @@
             var display = document.getElementById('display').innerHTML;
             //if(display.value.length === 9) return;
             if(display === '0') document.getElementById('display').innerHTML = num;
-            else document.getElementById('display').innerHTML += num;
+            else document.getElementById('display').innerHTML += num
         }
 
         function limparDisplay(){
