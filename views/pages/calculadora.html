@@ -6,16 +6,17 @@
     <meta charset="utf-8" />
     <style type="text/css">
     *{
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 0px;
     }
     .global{
         width: 70%;
-        margin: 20px auto auto auto;
+        margin: auto;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     table{
-        width: 100%;
+        width: 60%;
+        margin: auto;
         padding: 20px 30px;
         background: #475059;
         border: none;
@@ -54,9 +55,27 @@
                 box-sizing: border-box;
         color: #475059;
     }
-    .botao_ig{
+    .botao_lh{
         width: 95%;
         padding: 10px;
+        margin: 3px;
+        /* mudar a cor dos botoes de operacoes*/
+        background: #e2e2e2;
+        border: none;
+        border-left: 3px solid;
+        border-bottom: 3px solid;
+        border-color: #e2e2e2;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        color: #475059;
+        text-decoration:underline overline;
+    }
+    .botao_ig{
+        width: 95%;
+        padding: 20px 0px;
         margin: 3px;
         /* mudar a cor do botao de igualdade */
         background: #fe9554;
@@ -65,7 +84,7 @@
         border-bottom: 3px solid;
         border-color: #fe9554;
         border-radius: 5px;
-        font-size: 20px;
+        font-size: 50px;
         font-weight: bold;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
@@ -79,6 +98,13 @@
         background: #f8f8f8;
     }
     .botao_nan:hover{
+        border: 1.5px solid;
+        border-color: #475059;
+        cursor: pointer;
+        /* mudar a cor dos botoes de operacoes ao passar o mouse por cima*/
+        background: #c0c0c0;
+    }
+    .botao_lh:hover{
         border: 1.5px solid;
         border-color: #475059;
         cursor: pointer;
@@ -102,7 +128,7 @@
         margin-bottom: 5px;
         font-size: 20px;
         text-align: right;
-        color: rgb(0, 0, 0);
+        color: #000;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
     }
@@ -110,22 +136,22 @@
         cursor: text;
     }
     aside{
-        width: 14%;
-        margin: auto 0px auto 5px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        width: 20%;
+        margin: auto;
         float: left;
-        background: #ffffff;
+        background: #e2e2e2;
         border-radius: 5px;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;  
     }
     </style>
-    <!-- <link rel="stylesheet" type="text/css" href="global.css"/> -->
   </head>
   <body onkeypress="manipularTeclado()">
-       <!--<aside>
+       <aside>
           <h3>Historico:</h3>
           <p id="outHistorico"></p>
-        </aside>-->
+        </aside>
     <div class="global">
         <table>
             <tr>
@@ -135,45 +161,53 @@
                 <td><input type="button" class="botao_nan" value="C" onclick="limparDisplay()" /></td>
                 <td><input type="button" class="botao_nan" value="(" onclick="atualizarDisplay('(')" /></td>
                 <td><input type="button" class="botao_nan" value=")" onclick="atualizarDisplay(')')" /></td>
-                <td><input type="button" class="botao_nan" value="x²" onclick="atualizarDisplay('**2')" /></td>
                 <td><input type="button" class="botao_nan" value="÷" onclick="atualizarDisplay('/')" /></td>
+                <td><input type="button" class="botao_nan" value="√" onclick="calcularRaiz()" /></td>
             </tr>
             <tr>
                 <td><input type="button" class="botao" value="7" onclick="atualizarDisplay('7')" /></td>
                 <td><input type="button" class="botao" value="8" onclick="atualizarDisplay('8')" /></td>
                 <td><input type="button" class="botao" value="9" onclick="atualizarDisplay('9')" /></td>
                 <td><input type="button" class="botao_nan" value="×" onclick="atualizarDisplay('*')" /></td>
+                <td><input type="button" class="botao_nan" value="x²" onclick="atualizarDisplay('**2')" /></td>
             </tr>
             <tr>
                 <td><input type="button" class="botao" value="4" onclick="atualizarDisplay('4')" /></td>
                 <td><input type="button" class="botao" value="5" onclick="atualizarDisplay('5')" /></td>
                 <td><input type="button" class="botao" value="6" onclick="atualizarDisplay('6')" /></td>
                 <td><input type="button" class="botao_nan" value="-" onclick="atualizarDisplay('-')" /></td>
+                <td><input type="button" class="botao_nan" value="%" onclick="atualizarDisplay('*0.01')" /></td>
             </tr>
             <tr>
                 <td><input type="button" class="botao" value="1" onclick="atualizarDisplay('1')" /></td>
                 <td><input type="button" class="botao" value="2" onclick="atualizarDisplay('2')" /></td>
                 <td><input type="button" class="botao" value="3" onclick="atualizarDisplay('3')" /></td>
                 <td><input type="button" class="botao_nan" value="+" onclick="atualizarDisplay('+')" /></td>
+                <td rowspan="2"><input type="button" class="botao_ig" value="=" onclick="calcularOperacao()" /></td>
             </tr>
             <tr>
-                <td><input type="button" class="botao_nan" value="%" onclick="atualizarDisplay('%')" /></td>
+                <td><input type="button" class="botao_lh" value="H" onclick="limparHistorico()" /></td>
                 <td><input type="button" class="botao" value="0" onclick="atualizarDisplay('0')" /></td>
                 <td><input type="button" class="botao_nan" value="." onclick="atualizarDisplay('.')" /></td>
-                <td><input type="button" class="botao_ig" value="=" onclick="calcularOperacao()" /></td>
+                <td><input type="button" class="botao_nan" value="«" onclick="desfazerDisplay()" /></td>
             </tr>
         </table>
     </div>
       <script>
         function atualizarDisplay(num){
             var display = document.getElementById('display').innerHTML;
-            //if(display.value.length === 9) return;
             if(display === '0') document.getElementById('display').innerHTML = num;
             else document.getElementById('display').innerHTML += num
         }
-
+        function desfazerDisplay() {
+            var display = document.getElementById('display').innerHTML;
+            document.getElementById('display').innerHTML = display.substring(0, display.length - 1);
+        }
         function limparDisplay(){
             document.getElementById('display').innerHTML = "0";
+        }
+        function limparHistorico(){
+            document.getElementById('outHistorico').innerHTML = "";
         }
         var historico = ''
         function calcularOperacao(){
@@ -182,11 +216,16 @@
             if (display) {
                 document.getElementById('display').innerHTML = eval(display);
             }
-            document.getElementById('outHistorico').innerHTML += historico + '=' + eval(display) + '\n';
+            document.getElementById('outHistorico').innerHTML += historico + '=' + eval(display) + ' █ ';
         }
-        function manipularTeclado(){
-            if(/[0-9]/.test(event.key))
-                atualizarDisplay({value: event.key});
+        function calcularRaiz(){
+            var display = document.getElementById('display').innerHTML;
+            var historico = document.getElementById('display').innerHTML;
+            if (display) {
+                document.getElementById('display').innerHTML = Math.sqrt(eval(display));
+                
+            }
+            document.getElementById('outHistorico').innerHTML += '√(' + historico + ') =' + Math.sqrt(eval(display)) + ' █ ';
         }
     </script>
 
