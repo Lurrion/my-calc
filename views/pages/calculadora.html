@@ -172,7 +172,7 @@
                 <td><input type="button" class="botao" value="5" onclick="atualizarDisplay('5')" /></td>
                 <td><input type="button" class="botao" value="6" onclick="atualizarDisplay('6')" /></td>
                 <td><input type="button" class="botao_nan" value="-" onclick="atualizarDisplay('-')" /></td>
-                <td><input type="button" class="botao_nan" value="%" onclick="atualizarDisplay('*0.01')" /></td>
+                <td><input type="button" class="botao_nan" value="%" onclick="calcularPorcentagem()" /></td>
             </tr>
             <tr>
                 <td><input type="button" class="botao" value="1" onclick="atualizarDisplay('1')" /></td>
@@ -223,6 +223,14 @@
             }
             document.getElementById('outHistorico').innerHTML += '√(' + historico + ') =' + Math.sqrt(eval(display)) + ' █ ';
         }
+        function calcularPorcentagem(){
+            var display = document.getElementById("display").innerHTML;
+            var historico = document.getElementById('display').innerHTML;
+            if(display){
+                document.getElementById("output").innerHTML = value;
+        
+            }
+        }    
     </script>
 
   </body>
