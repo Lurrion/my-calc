@@ -4,6 +4,7 @@
   <head>
     <title>Calculadora</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style type="text/css">
     *{
     margin: 10px;
@@ -16,9 +17,9 @@
     }
     table{
         display: block;
-        max-width: 47%;
+        width: 380px;
         margin: auto;
-        padding: 20px 30px;
+        padding: 20px 20px;
         background: #475059;
         border: none;
         border-radius: 5px;
@@ -119,7 +120,8 @@
         background: #afead8;
         border: none;
         border-radius: 5px;
-        width: 100%;
+        width: 332px;
+        height: 73px;
         padding: 10px;
         margin: auto;
         margin-bottom: 5px;
@@ -140,7 +142,7 @@
         height: 400px;
         padding: 10px;
         margin: 20px;
-        margin-left: 30px;
+        margin-left: 50px;
         font-size: 30px;
         color: #000;
     }
@@ -151,7 +153,7 @@
         <table>
             <tr>
                 <td colspan="6"><p class="in_text" id="display" value="0" disabled>0</p></td>
-                <td rowspan="9" colspan="6" width:"100%"><p class="historico" id="outHistorico" disabled>Historico: <br></p></td>
+                <td rowspan="9" colspan="6"><p class="historico" id="outHistorico" disabled>Historico: <br></p></td>
             </tr>
             <tr>
                 <td><input type="button" class="botao_nan" value="C" onclick="limparDisplay()" /></td>
@@ -172,7 +174,7 @@
                 <td><input type="button" class="botao" value="5" onclick="atualizarDisplay('5')" /></td>
                 <td><input type="button" class="botao" value="6" onclick="atualizarDisplay('6')" /></td>
                 <td><input type="button" class="botao_nan" value="-" onclick="atualizarDisplay('-')" /></td>
-                <td><input type="button" class="botao_nan" value="%" onclick="calcularPorcentagem('0.01')" /></td>
+                <td><input type="button" class="botao_nan" value="%" onclick="atualizarDisplay('*0.01')" /></td>
             </tr>
             <tr>
                 <td><input type="button" class="botao" value="1" onclick="atualizarDisplay('1')" /></td>
@@ -190,6 +192,7 @@
         </table>
     </div>
       <script>
+        alert("Operacoes validas para calculos com porcentagem: \n  Ex: '50% * 2106' ; '2106 * 50%' -> mostra 1053 \nOperacoes não validas para calculos com porcentagem: \n Ex: '2106 - 38%' ; '327 + 20%' \n")
         function atualizarDisplay(num){
             var display = document.getElementById('display').innerHTML;
             if(display === '0') document.getElementById('display').innerHTML = num;
